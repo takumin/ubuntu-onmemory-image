@@ -13,3 +13,9 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+      - name: Required
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yqq debootstrap
+      - name: Building
+        run: sudo ./make_image.bash
